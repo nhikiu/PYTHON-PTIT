@@ -1,1 +1,1 @@
-YES' if isPrime(num) else 'NO')
+e 'NO')
