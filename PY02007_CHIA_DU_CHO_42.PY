@@ -1,13 +1,12 @@
-cnt = 0
+list = []
 mark = [0] * 42
-while True:
-  res = [int(i) for i in input().split()]
-  cnt += len(res)
-  for i in res:
-    mark[i % 42] = 1
-  if cnt >= 10: break
+while len(list) < 10:
+  list += [int(i) for i in input().split()]
 
-ans = 0
+for i in list:
+  mark[i % 42] = 1
+cnt = 0
 for i in mark:
-  if i: ans += 1
-print(ans)
+  if i == 1:
+    cnt += 1
+print(cnt)

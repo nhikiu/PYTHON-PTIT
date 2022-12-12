@@ -1,18 +1,13 @@
-import math
-
-def solve(n):
+for case in range(int(input())):
   res = '1'
-  for i in range(2, int(math.sqrt(n)) + 1):
+  i = 2
+  n = int(input())
+  while n >= i:
     cnt = 0
-    while not n % i:
+    while n % i == 0:
       cnt += 1
       n /= i
     if cnt > 0:
-      res += ' * ' + str(i) + '^' + str(cnt)
-  if n > 1:
-    res += " * " + str(int(n)) + '^1'
+      res += f" * {i}^{cnt}"
+    i += 1
   print(res)
-
-for case in range(int(input())):
-  n = int(input())
-  solve(n)

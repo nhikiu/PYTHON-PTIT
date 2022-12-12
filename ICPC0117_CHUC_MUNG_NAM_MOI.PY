@@ -1,7 +1,5 @@
-res = []
-n = int(input())
-for i in range(n):
-  str = input()
-  if str not in res:
-    res += [str]
-print(len(res))
+l = []
+for case in range(int(input())):
+  l += [input()]
+s = set(l)
+print(len(s))

@@ -1,9 +1,7 @@
-def soKhongGiam(n):
-  for i in range(0, len(n) - 1):
-    if n[i] > n[i+1]:
-      return False
+def check(n):
+  for i in range(1, len(n)):
+    if n[i - 1] > n[i]: return False
   return True
 
 for case in range(int(input())):
-  num = input()
-  print("YES" if soKhongGiam(num) else "NO")
+  print('YES' if check(input()) else 'NO')

@@ -1,5 +1,3 @@
-list = input()
-if list.count('4') + list.count('7') == 4 or list.count('4') + list.count('7') == 7:
-  print("YES")
-else:
-  print("NO")
+s = input()
+cnt = s.count('4') + s.count('7')
+print('YES' if cnt == 4 or cnt == 7 else 'NO')

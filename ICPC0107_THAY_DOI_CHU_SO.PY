@@ -1,10 +1,11 @@
 for case in range(int(input())):
-  n, m = input().split()
+  a, b = input().split()
   inp = input().split()
   if len(inp) == 1:
-    x1 = inp[0]
-    x2 = input()
-  else: x1, x2 = inp
-  s1 = int(x1.replace(m ,n)) + int(x2.replace(m, n))
-  s2 = int(x1.replace(n, m)) + int(x2.replace(n, m))
-  print(f"{s1} {s2}" if s1 < s2 else f"{s2} {s1}")
+    s1 = inp[0]
+    s2 = input()
+  else:
+    s1, s2 = inp
+  res1 = int(s1.replace(a, b)) + int(s2.replace(a, b))
+  res2 = int(s1.replace(b, a)) + int(s2.replace(b, a))
+  print(min(res1, res2), max(res1, res2))

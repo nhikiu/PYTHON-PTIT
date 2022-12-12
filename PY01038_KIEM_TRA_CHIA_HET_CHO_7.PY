@@ -1,7 +1,9 @@
 for case in range(int(input())):
-  n = input()
-  i = 1
-  while i <= 1000 and int(n) % 7:
-    n = str(int(n) + int(n[::-1]))
-    i += 1
-  print(-1 if int(n) % 7 else n)
+  n = int(input())
+  cnt = 0
+  while True:
+    if n % 7 == 0 or cnt == 1000:
+      break
+    n = n + int(str(n)[::-1])
+    cnt += 1
+  print(n if cnt < 1000 else -1)

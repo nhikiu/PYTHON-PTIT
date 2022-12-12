@@ -1,19 +1,21 @@
-import math
+from math import log
 
-BASE = '0123456789ABCDEF'
+Base = '0123456789ABCDEF'
 
 for case in range(int(input())):
-  ind = int(math.log2(int(input())))
-  n = input()
+  n = int(log(int(input()), 2))
+  s = input()
+  while len(s) % n != 0:
+    s = '0' + s
   res = ''
-  while len(n) % ind:
-    n = '0' + n
   pow = [1]
-  for i in range(1, ind):
+  for i in range(1, n):
+    # ..., 32, 16, 8, 4, 2, 1
     pow = [pow[0] * 2] + pow
-  for i in range(0, len(n), ind):
+  for i in range(0, len(s), n):
     tmp = 0
-    for j in range(i, i + ind):
-      tmp = tmp + int(n[j]) * pow[j - i]
-    res += BASE[tmp]
+    # gia tri cua tung phan tu
+    for j in range(i, i + n):
+      tmp = tmp + int(s[j]) * pow[j - i]
+    res += Base[tmp]
   print(res)

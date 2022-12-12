@@ -1,14 +1,13 @@
-def check(s):
-  if len(s) % 2 or s != s[::-1]:
-    return False
-  for i in s:
-    if int(i) % 2:
+def check(n):
+  tmp = ' '.join('02468').split()
+  for i in ' '.join(n).split():
+    if i not in tmp:
       return False
   return True
 
 for case in range(int(input())):
   n = int(input())
-  for i in range(22, n, 2):
-    if check(str(i)):
+  for i in range(22, n, 22):
+    if i == int(str(i)[::-1]) and check(str(i)) and not len(str(i)) % 2:
       print(i, end = ' ')
   print()

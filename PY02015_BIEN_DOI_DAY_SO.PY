@@ -1,21 +1,19 @@
-def check(list):
-  for i in range(1, len(list)):
-    if list[i] != list[i - 1]:
-      return False
+def check(a):
+  for i in range(1, len(a)):
+    if a[i - 1] != a[i]: return False
   return True
 
 while True:
-  list = [int(i) for i in input().split()]
-  if list == [0] * 4:
+  inp = [int(i) for i in input().split()]
+  if inp == [0] * 4:
     break
   cnt = 0
-  while True:
-    if check(list):
-      break
+  while not check(inp):
+    a = [0] * 4
+    a[0] = abs(inp[0] - inp[1])
+    a[1] = abs(inp[1] - inp[2])
+    a[2] = abs(inp[2] - inp[3])
+    a[3] = abs(inp[3] - inp[0])
+    inp = a
     cnt += 1
-    new_list = list[:]
-    for i in range(0, 3):
-      new_list[i] = abs(list[i] - list[i + 1])
-    new_list[3] = abs(list[3] - list[0])
-    list = new_list[:]
   print(cnt)

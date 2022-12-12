@@ -1,3 +1,1 @@
-str = input().split()
-for i in str:
-  print(i)
+print('\n'.join(input().split()))
